@@ -13770,3 +13770,1531 @@ requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected(
 2026-04-02 21:51:45,178 - report_generator - INFO - Saved text report to reports/2026-03-31_report.txt
 2026-04-02 21:51:45,178 - scheduler - INFO - Saved positions to file
 2026-04-02 21:51:45,178 - scheduler - INFO - === Daily analysis complete ===
+2026-04-02 22:00:43,535 - __main__ - INFO - Running daily analysis for 2026-03-31
+2026-04-02 22:00:43,536 - scheduler - INFO - === Starting daily analysis for 2026-03-31 ===
+2026-04-02 22:00:43,781 - indicators - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 22:00:44,108 - wave_theory - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 22:00:44,108 - volume_price - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 22:00:44,109 - chip_analysis - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 22:00:45,910 - sentiment_analyzer - INFO - Loaded keywords from config: bull=['降息', '版号', '大基金', '鼓励', '利好'], bear=['反垄断', '罚款', '禁售', '退市', '调查']
+2026-04-02 22:00:45,915 - signal_generator - INFO - Loaded config: {'total_score_threshold': 70, 'stop_loss': -0.06, 'take_profit_half': 0.06, 'take_profit_full': 0.1, 'holding_days_min': 30, 'holding_days_max': 90}
+2026-04-02 22:00:45,915 - scheduler - INFO - Analyzing ETF: 512000 (券商ETF)
+2026-04-02 22:00:45,919 - data_fetcher - INFO - Found existing cache for 512000: 23 days, last date: 2026-04-02
+2026-04-02 22:00:45,919 - data_fetcher - WARNING - Cached data for 512000 has only 23 days, less than minimum 50 days. Attempting to refresh...
+2026-04-02 22:00:46,618 - data_fetcher - WARNING - Attempt 1/3 failed for 512000: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:00:46,624 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:00:46,624 - data_fetcher - INFO - Retrying in 1 seconds...
+2026-04-02 22:00:48,293 - data_fetcher - WARNING - Attempt 2/3 failed for 512000: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:00:48,294 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:00:48,294 - data_fetcher - INFO - Retrying in 2 seconds...
+2026-04-02 22:00:50,961 - data_fetcher - WARNING - Attempt 3/3 failed for 512000: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:00:50,962 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:00:50,962 - data_fetcher - ERROR - All 3 attempts failed for 512000
+2026-04-02 22:00:50,963 - data_fetcher - WARNING - Refresh failed. Using existing cached data (23 days)
+2026-04-02 22:00:50,991 - quality_checker - INFO - Data quality check complete. Status: ok, Issues: 0
+2026-04-02 22:00:50,992 - indicators - WARNING - Insufficient data for MACD: need 26, got 21
+2026-04-02 22:00:50,996 - wave_theory - WARNING - Insufficient data: 21 < 50
+2026-04-02 22:00:50,998 - volume_price - INFO - Volume-price analysis: score=0, details={'vol_healthy': np.False_, 'candle_bull': False, 'volume_shrink': False, 'ma_short': np.float64(15826958.2), 'ma_long': np.float64(17756569.7), 'last_3_days_candles': 1, 'shrink_day_index': -1, 'short_period': 5, 'long_period': 20}
+2026-04-02 22:00:50,998 - data_fetcher - WARNING - Failed to fetch chip data for 512000 on 2026-03-31: stock_cyq_em() got an unexpected keyword argument 'date'
+2026-04-02 22:00:50,999 - news_collector - INFO - Fetching news for keywords: ['券商'], date: 2026-03-31
+2026-04-02 22:00:50,999 - news_collector - INFO - Fetching from 东方财富...
+2026-04-02 22:00:52,188 - news_collector - WARNING - Eastmoney returned status 404
+2026-04-02 22:00:52,190 - news_collector - INFO - Fetching from 新浪财经...
+2026-04-02 22:00:53,485 - news_collector - WARNING - Sina returned status 404
+2026-04-02 22:00:53,487 - news_collector - INFO - Fetching from 财联社...
+2026-04-02 22:00:54,583 - news_collector - ERROR - Failed to fetch from CLS: HTTPSConnectionPool(host='api.cls.cn', port=443): Max retries exceeded with url: /v2/node/roll/list?app=cifco&sv=8.7.6&os=android&cpu=arm64&date=20260331&page=1&limit=20 (Caused by NameResolutionError("HTTPSConnection(host='api.cls.cn', port=443): Failed to resolve 'api.cls.cn' ([Errno -2] Name or service not known)"))
+2026-04-02 22:00:54,583 - news_collector - INFO - Trying fallback page parsing...
+2026-04-02 22:00:57,308 - news_collector - WARNING - No news fetched from any source, using sample data
+2026-04-02 22:00:57,309 - news_collector - INFO - Generating sample news for 2026-03-31
+2026-04-02 22:00:57,343 - sentiment_analyzer - INFO - Sentiment analysis: {'daily_sentiment': 0.5526, 'sentiment_trend': 0.5526, 'event_flag': 'strong_bull', 'keyword_adj': 0.1}
+2026-04-02 22:00:57,343 - signal_generator - INFO - Generating signal for 512000: shares=0, holding_days=0, pnl=0.00%
+2026-04-02 22:00:57,343 - signal_generator - INFO - Signal for 512000: action=HOLD, reason=insufficient score: 32.6 < 70
+2026-04-02 22:00:57,343 - scheduler - INFO - Signal for 512000: HOLD (score=12.552)
+2026-04-02 22:00:57,343 - scheduler - INFO - Analyzing ETF: 588000 (科创50ETF)
+2026-04-02 22:00:57,344 - data_fetcher - INFO - Full fetch for 588000 from 2025-06-04 to 2026-03-31
+2026-04-02 22:00:58,026 - data_fetcher - WARNING - Attempt 1/3 failed for 588000: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:00:58,027 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:00:58,027 - data_fetcher - INFO - Retrying in 1 seconds...
+2026-04-02 22:00:59,678 - data_fetcher - WARNING - Attempt 2/3 failed for 588000: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:00:59,679 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:00:59,679 - data_fetcher - INFO - Retrying in 2 seconds...
+2026-04-02 22:01:02,347 - data_fetcher - WARNING - Attempt 3/3 failed for 588000: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:02,348 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:02,349 - data_fetcher - ERROR - All 3 attempts failed for 588000
+2026-04-02 22:01:02,349 - data_fetcher - WARNING - No data fetched for 588000, returning empty DataFrame
+2026-04-02 22:01:02,352 - scheduler - WARNING - No data for 588000, skipping
+2026-04-02 22:01:02,352 - scheduler - INFO - Analyzing ETF: 161725 (白酒LOF)
+2026-04-02 22:01:02,353 - data_fetcher - INFO - Full fetch for 161725 from 2025-06-04 to 2026-03-31
+2026-04-02 22:01:03,008 - data_fetcher - WARNING - Attempt 1/3 failed for 161725: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:03,010 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:03,010 - data_fetcher - INFO - Retrying in 1 seconds...
+2026-04-02 22:01:05,675 - data_fetcher - WARNING - Attempt 2/3 failed for 161725: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:05,676 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:05,676 - data_fetcher - INFO - Retrying in 2 seconds...
+2026-04-02 22:01:08,334 - data_fetcher - WARNING - Attempt 3/3 failed for 161725: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:08,335 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:08,336 - data_fetcher - ERROR - All 3 attempts failed for 161725
+2026-04-02 22:01:08,336 - data_fetcher - WARNING - No data fetched for 161725, returning empty DataFrame
+2026-04-02 22:01:08,339 - scheduler - WARNING - No data for 161725, skipping
+2026-04-02 22:01:08,339 - scheduler - INFO - Analyzing ETF: 562500 (机器人ETF)
+2026-04-02 22:01:08,341 - data_fetcher - INFO - Full fetch for 562500 from 2025-06-04 to 2026-03-31
+2026-04-02 22:01:08,998 - data_fetcher - WARNING - Attempt 1/3 failed for 562500: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:09,004 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:09,005 - data_fetcher - INFO - Retrying in 1 seconds...
+2026-04-02 22:01:10,691 - data_fetcher - WARNING - Attempt 2/3 failed for 562500: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:10,692 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:10,692 - data_fetcher - INFO - Retrying in 2 seconds...
+2026-04-02 22:01:13,681 - data_fetcher - WARNING - Attempt 3/3 failed for 562500: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:13,682 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:13,682 - data_fetcher - ERROR - All 3 attempts failed for 562500
+2026-04-02 22:01:13,682 - data_fetcher - WARNING - No data fetched for 562500, returning empty DataFrame
+2026-04-02 22:01:13,685 - scheduler - WARNING - No data for 562500, skipping
+2026-04-02 22:01:13,685 - scheduler - INFO - Analyzing ETF: 159792 (港股通互联网ETF)
+2026-04-02 22:01:13,686 - data_fetcher - INFO - Full fetch for 159792 from 2025-06-04 to 2026-03-31
+2026-04-02 22:01:14,352 - data_fetcher - WARNING - Attempt 1/3 failed for 159792: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:14,353 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:14,353 - data_fetcher - INFO - Retrying in 1 seconds...
+2026-04-02 22:01:16,021 - data_fetcher - WARNING - Attempt 2/3 failed for 159792: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:16,023 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:16,023 - data_fetcher - INFO - Retrying in 2 seconds...
+2026-04-02 22:01:18,709 - data_fetcher - WARNING - Attempt 3/3 failed for 159792: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:18,720 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:18,720 - data_fetcher - ERROR - All 3 attempts failed for 159792
+2026-04-02 22:01:18,720 - data_fetcher - WARNING - No data fetched for 159792, returning empty DataFrame
+2026-04-02 22:01:18,723 - scheduler - WARNING - No data for 159792, skipping
+2026-04-02 22:01:18,723 - scheduler - INFO - Analyzing ETF: 159620 (中证500ETF)
+2026-04-02 22:01:18,726 - data_fetcher - INFO - Full fetch for 159620 from 2025-06-04 to 2026-03-31
+2026-04-02 22:01:19,393 - data_fetcher - WARNING - Attempt 1/3 failed for 159620: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:19,394 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:19,394 - data_fetcher - INFO - Retrying in 1 seconds...
+2026-04-02 22:01:21,060 - data_fetcher - WARNING - Attempt 2/3 failed for 159620: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:21,061 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:21,062 - data_fetcher - INFO - Retrying in 2 seconds...
+2026-04-02 22:01:23,743 - data_fetcher - WARNING - Attempt 3/3 failed for 159620: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:23,744 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:23,751 - data_fetcher - ERROR - All 3 attempts failed for 159620
+2026-04-02 22:01:23,751 - data_fetcher - WARNING - No data fetched for 159620, returning empty DataFrame
+2026-04-02 22:01:23,754 - scheduler - WARNING - No data for 159620, skipping
+2026-04-02 22:01:23,755 - scheduler - INFO - Analyzing ETF: 516690 (游戏ETF)
+2026-04-02 22:01:23,757 - data_fetcher - INFO - Full fetch for 516690 from 2025-06-04 to 2026-03-31
+2026-04-02 22:01:24,412 - data_fetcher - WARNING - Attempt 1/3 failed for 516690: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:24,413 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:24,413 - data_fetcher - INFO - Retrying in 1 seconds...
+2026-04-02 22:01:26,086 - data_fetcher - WARNING - Attempt 2/3 failed for 516690: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:26,087 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:26,087 - data_fetcher - INFO - Retrying in 2 seconds...
+2026-04-02 22:01:28,751 - data_fetcher - WARNING - Attempt 3/3 failed for 516690: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:28,752 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:28,753 - data_fetcher - ERROR - All 3 attempts failed for 516690
+2026-04-02 22:01:28,753 - data_fetcher - WARNING - No data fetched for 516690, returning empty DataFrame
+2026-04-02 22:01:28,755 - scheduler - WARNING - No data for 516690, skipping
+2026-04-02 22:01:28,756 - scheduler - INFO - Analyzing ETF: 159582 (半导体ETF)
+2026-04-02 22:01:28,758 - data_fetcher - INFO - Full fetch for 159582 from 2025-06-04 to 2026-03-31
+2026-04-02 22:01:29,433 - data_fetcher - WARNING - Attempt 1/3 failed for 159582: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:29,435 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:29,435 - data_fetcher - INFO - Retrying in 1 seconds...
+2026-04-02 22:01:31,089 - data_fetcher - WARNING - Attempt 2/3 failed for 159582: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:31,090 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:31,091 - data_fetcher - INFO - Retrying in 2 seconds...
+2026-04-02 22:01:33,761 - data_fetcher - WARNING - Attempt 3/3 failed for 159582: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 22:01:33,763 - data_fetcher - WARNING - Stack trace: Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 323, in begin
+    version, status, reason = self._read_status()
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/http/client.py", line 292, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/neal/project_test/data_fetcher.py", line 116, in fetch_from_akshare
+    df = ak.fund_etf_hist_em(
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/akshare/fund/fund_etf_em.py", line 277, in fund_etf_hist_em
+    r = requests.get(url, timeout=15, params=params)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/neal/anaconda3/envs/eco_try/lib/python3.10/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-04-02 22:01:33,770 - data_fetcher - ERROR - All 3 attempts failed for 159582
+2026-04-02 22:01:33,770 - data_fetcher - WARNING - No data fetched for 159582, returning empty DataFrame
+2026-04-02 22:01:33,773 - scheduler - WARNING - No data for 159582, skipping
+2026-04-02 22:01:33,785 - report_generator - INFO - Loaded 8 ETF mappings
+2026-04-02 22:01:33,785 - report_generator - INFO - Saved HTML report to reports/2026-03-31_report.html
+2026-04-02 22:01:33,785 - report_generator - INFO - Saved text report to reports/2026-03-31_report.txt
+2026-04-02 22:01:33,785 - scheduler - INFO - Saved positions to file
+2026-04-02 22:01:33,785 - scheduler - INFO - === Daily analysis complete ===
