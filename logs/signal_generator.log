@@ -1,0 +1,16 @@
+2026-04-02 21:20:11,792 - __main__ - INFO - Generating signal for 512000: shares=0, holding_days=0, pnl=0.00%
+2026-04-02 21:20:11,792 - __main__ - INFO - Signal for 512000: action=BUY_2W, reason=entry signal: score=119.0 >= threshold=70
+2026-04-02 21:20:11,792 - __main__ - INFO - Generating signal for 512000: shares=0, holding_days=0, pnl=0.00%
+2026-04-02 21:20:11,792 - __main__ - INFO - Signal for 512000: action=BUY_2W, reason=entry signal: score=90.0 >= threshold=70
+2026-04-02 21:20:11,794 - __main__ - INFO - Generating signal for 512000: shares=10000, holding_days=91, pnl=0.00%
+2026-04-02 21:20:11,794 - __main__ - INFO - Signal for 512000: action=CLOSE_ALL, reason=max_holding_days reached: 91
+2026-04-02 21:20:11,794 - __main__ - INFO - Generating signal for 512000: shares=10000, holding_days=32, pnl=-7.41%
+2026-04-02 21:20:11,794 - __main__ - INFO - Signal for 512000: action=CLOSE_ALL, reason=stop_loss triggered: pnl=-7.41%
+2026-04-02 21:20:11,794 - __main__ - INFO - Generating signal for 512000: shares=10000, holding_days=32, pnl=-3.85%
+2026-04-02 21:20:11,794 - __main__ - INFO - Signal for 512000: action=HOLD, reason=default
+2026-04-02 21:20:11,794 - __main__ - INFO - Generating signal for 512000: shares=10000, holding_days=32, pnl=0.00%
+2026-04-02 21:20:11,794 - __main__ - INFO - Signal for 512000: action=CLOSE_ALL, reason=strong_bear news event
+2026-04-02 21:20:11,794 - __main__ - INFO - Generating signal for 512000: shares=10000, holding_days=32, pnl=6.38%
+2026-04-02 21:20:11,795 - __main__ - INFO - Signal for 512000: action=REDUCE_HALF, reason=take_profit_half reached: pnl=6.38%, days=32
+2026-04-02 21:20:11,795 - __main__ - INFO - Generating signal for 512000: shares=0, holding_days=0, pnl=0.00%
+2026-04-02 21:20:11,795 - __main__ - INFO - Signal for 512000: action=BUY_2W, reason=entry signal: score=119.0 >= threshold=70

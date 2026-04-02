@@ -1,0 +1,15 @@
+2026-04-02 21:22:58,597 - __main__ - INFO - Optimizing: win_rate=75.00%, target=80.00%
+2026-04-02 21:22:58,599 - __main__ - INFO - Win rate 75.00% below target 80.00%, tightening parameters
+2026-04-02 21:22:58,599 - __main__ - INFO - Tightened params: profit=0.38, conc=14.0, score=71, rsi=32, fib=[0.402, 0.598]
+2026-04-02 21:22:58,600 - __main__ - INFO - Optimization complete: {'profit_threshold': 0.38, 'concentration_threshold': 14.0, 'total_score_threshold': 71, 'rsi_threshold': 32, 'wave_fib_low': 0.402, 'wave_fib_high': 0.598, 'macd_fast': 12, 'macd_slow': 26, 'macd_signal': 9, 'kdj_n': 9, 'kdj_m1': 3, 'kdj_m2': 3, 'rsi_period': 14}
+2026-04-02 21:22:58,601 - __main__ - INFO - Optimizing: win_rate=82.00%, target=80.00%
+2026-04-02 21:22:58,603 - __main__ - INFO - Win rate 82.00% within acceptable range, keeping parameters unchanged
+2026-04-02 21:22:58,604 - __main__ - INFO - Optimization complete: {'profit_threshold': 0.38, 'concentration_threshold': 14.0, 'total_score_threshold': 71, 'rsi_threshold': 32, 'wave_fib_low': 0.402, 'wave_fib_high': 0.598, 'macd_fast': 12, 'macd_slow': 26, 'macd_signal': 9, 'kdj_n': 9, 'kdj_m1': 3, 'kdj_m2': 3, 'rsi_period': 14}
+2026-04-02 21:22:58,606 - __main__ - INFO - Optimizing: win_rate=88.00%, target=80.00%
+2026-04-02 21:22:58,607 - __main__ - INFO - Win rate 88.00% well above target 80.00%, relaxing parameters
+2026-04-02 21:22:58,608 - __main__ - INFO - Relaxed params: profit=0.4, conc=15.0, score=70, rsi=30, fib=[0.382, 0.618]
+2026-04-02 21:22:58,609 - __main__ - INFO - Optimization complete: {'profit_threshold': 0.4, 'concentration_threshold': 15.0, 'total_score_threshold': 70, 'rsi_threshold': 30, 'wave_fib_low': 0.382, 'wave_fib_high': 0.618, 'macd_fast': 12, 'macd_slow': 26, 'macd_signal': 9, 'kdj_n': 9, 'kdj_m1': 3, 'kdj_m2': 3, 'rsi_period': 14}
+2026-04-02 21:22:58,609 - __main__ - INFO - Optimizing: win_rate=60.00%, target=80.00%
+2026-04-02 21:22:58,609 - __main__ - INFO - Win rate 60.00% below target 80.00%, tightening parameters
+2026-04-02 21:22:58,610 - __main__ - INFO - Tightened params: profit=0.38, conc=14.0, score=71, rsi=32, fib=[0.402, 0.598]
+2026-04-02 21:22:58,610 - __main__ - INFO - Optimization complete: {'profit_threshold': 0.38, 'concentration_threshold': 14.0, 'total_score_threshold': 71, 'rsi_threshold': 32, 'wave_fib_low': 0.402, 'wave_fib_high': 0.598, 'macd_fast': 12, 'macd_slow': 26, 'macd_signal': 9, 'kdj_n': 9, 'kdj_m1': 3, 'kdj_m2': 3, 'rsi_period': 14}

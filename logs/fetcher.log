@@ -1,0 +1,13 @@
+2026-04-02 20:46:04,487 - __main__ - INFO - Full fetch for 512000 from 2026-03-03 to 2026-04-02
+2026-04-02 20:46:04,487 - __main__ - ERROR - akshare not installed
+2026-04-02 20:46:04,487 - __main__ - WARNING - No data fetched for 512000, returning empty DataFrame
+2026-04-02 20:46:31,980 - __main__ - INFO - Full fetch for 512000 from 2026-03-03 to 2026-04-02
+2026-04-02 20:46:31,980 - __main__ - ERROR - akshare not installed
+2026-04-02 20:46:31,981 - __main__ - WARNING - No data fetched for 512000, returning empty DataFrame
+2026-04-02 20:47:43,559 - __main__ - INFO - Full fetch for 512000 from 2026-03-03 to 2026-04-02
+2026-04-02 20:47:43,559 - __main__ - ERROR - akshare not installed
+2026-04-02 20:47:43,559 - __main__ - WARNING - No data fetched for 512000, returning empty DataFrame
+2026-04-02 20:54:00,829 - __main__ - INFO - Full fetch for 512000 from 2026-03-03 to 2026-04-02
+2026-04-02 20:54:01,039 - __main__ - INFO - Saved initial cache for 512000
+2026-04-02 20:54:01,051 - __main__ - WARNING - Failed to fetch chip data for 512000 on 2026-04-02: stock_cyq_em() got an unexpected keyword argument 'date'
+2026-04-02 21:21:57,902 - data_fetcher - INFO - Using cached data for 512000 up to 2026-04-02

@@ -1,0 +1,8 @@
+2026-04-02 21:08:46,633 - __main__ - INFO - Wave analysis: peak_idx=86, trough_idx=-1, retracement=0.205, fib_range=[0.382, 0.618]
+2026-04-02 21:10:28,003 - __main__ - INFO - Wave: peak_idx=61, trough_idx=82, retracement=0.472, fib=[0.382, 0.618]
+2026-04-02 21:10:48,595 - __main__ - INFO - Wave: peak_idx=61, trough_idx=99, retracement=0.969, fib=[0.382, 0.618]
+2026-04-02 21:11:11,706 - __main__ - INFO - Wave: peak_idx=61, trough_idx=82, retracement=0.485, fib=[0.382, 0.618]
+2026-04-02 21:11:27,532 - __main__ - INFO - Wave: peak_idx=61, trough_idx=82, retracement=0.485, fib=[0.382, 0.618]
+2026-04-02 21:11:49,434 - __main__ - INFO - Wave: peak_idx=61, trough_idx=82, retracement=0.485, fib=[0.382, 0.618]
+2026-04-02 21:12:23,001 - __main__ - INFO - Wave: peak_idx=61, trough_idx=82, retracement=0.462, fib=[0.382, 0.618]
+2026-04-02 21:12:23,001 - __main__ - INFO - Wave pattern READY: retracement=0.462, breakout=True

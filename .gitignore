@@ -1,0 +1,9 @@
+pycache/
+.pyc
+data/.csv
+data/.parquet
+logs/.log
+reports/*.html
+.env
+*.db
+.DS_Store

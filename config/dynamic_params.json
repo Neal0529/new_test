@@ -1,0 +1,17 @@
+{
+  "profit_threshold": 0.40,
+  "concentration_threshold": 15.0,
+  "total_score_threshold": 70,
+  "rsi_threshold": 30,
+  "wave_fib_low": 0.382,
+  "wave_fib_high": 0.618,
+  "volume_ma_short": 5,
+  "volume_ma_long": 20,
+  "macd_fast": 12,
+  "macd_slow": 26,
+  "macd_signal": 9,
+  "kdj_n": 9,
+  "kdj_m1": 3,
+  "kdj_m2": 3,
+  "rsi_period": 14
+}

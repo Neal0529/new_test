@@ -1,0 +1,60 @@
+etfs:
+  - code: "512000"
+    name: "券商ETF"
+    sector: "券商"
+    base_position: 20000
+    max_position: 60000
+  - code: "588000"
+    name: "科创50ETF"
+    sector: "科创板"
+    base_position: 20000
+    max_position: 60000
+  - code: "161725"
+    name: "白酒LOF"
+    sector: "白酒"
+    base_position: 20000
+    max_position: 60000
+  - code: "562500"
+    name: "机器人ETF"
+    sector: "机器人"
+    base_position: 20000
+    max_position: 60000
+  - code: "159792"
+    name: "港股通互联网ETF"
+    sector: "港股互联网"
+    base_position: 20000
+    max_position: 60000
+  - code: "159620"
+    name: "中证500ETF"
+    sector: "中证500"
+    base_position: 20000
+    max_position: 60000
+  - code: "516690"
+    name: "游戏ETF"
+    sector: "游戏"
+    base_position: 20000
+    max_position: 60000
+  - code: "159582"
+    name: "半导体ETF"
+    sector: "半导体"
+    base_position: 20000
+    max_position: 60000
+
+global:
+  win_rate_target: 0.80
+  stop_loss: -0.06
+  take_profit_half: 0.06
+  take_profit_full: 0.10
+  holding_days_min: 30
+  holding_days_max: 90
+
+news:
+  sources: ["cls", "xueqiu", "eastmoney"]
+  sentiment_model: "snownlp"
+  strong_bull_keywords: ["降息", "版号", "大基金", "鼓励", "利好"]
+  strong_bear_keywords: ["反垄断", "罚款", "禁售", "退市", "调查"]
+
+data:
+  primary_source: "akshare"
+  fallback_source: "tushare"
+  cache_days: 365

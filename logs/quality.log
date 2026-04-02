@@ -1,0 +1,3 @@
+2026-04-02 21:03:28,970 - __main__ - INFO - Filled 1 null values
+2026-04-02 21:03:28,971 - __main__ - WARNING - Fixed 1 zero volume values
+2026-04-02 21:03:28,976 - __main__ - INFO - Data quality check complete. Status: warning, Issues: 1

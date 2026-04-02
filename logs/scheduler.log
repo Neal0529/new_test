@@ -1,0 +1,106 @@
+2026-04-02 21:27:29,884 - __main__ - INFO - Running analysis for date: 2026-04-01, optimize: False
+2026-04-02 21:27:29,884 - __main__ - INFO - === Starting daily analysis for 2026-04-01 ===
+2026-04-02 21:27:30,128 - indicators - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:27:30,457 - wave_theory - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:27:30,458 - volume_price - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:27:30,458 - chip_analysis - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:27:32,335 - sentiment_analyzer - INFO - Loaded keywords from config: bull=['降息', '版号', '大基金', '鼓励', '利好'], bear=['反垄断', '罚款', '禁售', '退市', '调查']
+2026-04-02 21:27:32,340 - signal_generator - INFO - Loaded config: {'total_score_threshold': 70, 'stop_loss': -0.06, 'take_profit_half': 0.06, 'take_profit_full': 0.1, 'holding_days_min': 30, 'holding_days_max': 90}
+2026-04-02 21:27:32,340 - __main__ - INFO - Analyzing ETF: 512000 (券商ETF)
+2026-04-02 21:27:32,344 - data_fetcher - INFO - Using cached data for 512000 up to 2026-04-02
+2026-04-02 21:27:32,356 - quality_checker - INFO - Data quality check complete. Status: ok, Issues: 0
+2026-04-02 21:27:32,356 - __main__ - WARNING - Insufficient data for 512000, skipping
+2026-04-02 21:27:32,356 - __main__ - INFO - Analyzing ETF: 588000 (科创50ETF)
+2026-04-02 21:27:32,356 - data_fetcher - INFO - Full fetch for 588000 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:32,809 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 588000: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:32,809 - data_fetcher - WARNING - No data fetched for 588000, returning empty DataFrame
+2026-04-02 21:27:32,811 - __main__ - WARNING - No data for 588000, skipping
+2026-04-02 21:27:32,812 - __main__ - INFO - Analyzing ETF: 161725 (白酒LOF)
+2026-04-02 21:27:32,812 - data_fetcher - INFO - Full fetch for 161725 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:33,982 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 161725: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:33,983 - data_fetcher - WARNING - No data fetched for 161725, returning empty DataFrame
+2026-04-02 21:27:33,985 - __main__ - WARNING - No data for 161725, skipping
+2026-04-02 21:27:33,985 - __main__ - INFO - Analyzing ETF: 562500 (机器人ETF)
+2026-04-02 21:27:33,986 - data_fetcher - INFO - Full fetch for 562500 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:35,153 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 562500: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:35,153 - data_fetcher - WARNING - No data fetched for 562500, returning empty DataFrame
+2026-04-02 21:27:35,156 - __main__ - WARNING - No data for 562500, skipping
+2026-04-02 21:27:35,156 - __main__ - INFO - Analyzing ETF: 159792 (港股通互联网ETF)
+2026-04-02 21:27:35,157 - data_fetcher - INFO - Full fetch for 159792 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:35,313 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 159792: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:35,314 - data_fetcher - WARNING - No data fetched for 159792, returning empty DataFrame
+2026-04-02 21:27:35,316 - __main__ - WARNING - No data for 159792, skipping
+2026-04-02 21:27:35,317 - __main__ - INFO - Analyzing ETF: 159620 (中证500ETF)
+2026-04-02 21:27:35,318 - data_fetcher - INFO - Full fetch for 159620 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:36,517 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 159620: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:36,517 - data_fetcher - WARNING - No data fetched for 159620, returning empty DataFrame
+2026-04-02 21:27:36,519 - __main__ - WARNING - No data for 159620, skipping
+2026-04-02 21:27:36,519 - __main__ - INFO - Analyzing ETF: 516690 (游戏ETF)
+2026-04-02 21:27:36,520 - data_fetcher - INFO - Full fetch for 516690 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:37,262 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 516690: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:37,263 - data_fetcher - WARNING - No data fetched for 516690, returning empty DataFrame
+2026-04-02 21:27:37,266 - __main__ - WARNING - No data for 516690, skipping
+2026-04-02 21:27:37,266 - __main__ - INFO - Analyzing ETF: 159582 (半导体ETF)
+2026-04-02 21:27:37,267 - data_fetcher - INFO - Full fetch for 159582 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:37,414 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 159582: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:37,415 - data_fetcher - WARNING - No data fetched for 159582, returning empty DataFrame
+2026-04-02 21:27:37,418 - __main__ - WARNING - No data for 159582, skipping
+2026-04-02 21:27:37,444 - report_generator - INFO - Loaded 8 ETF mappings
+2026-04-02 21:27:37,444 - report_generator - WARNING - No signals provided, generating empty report
+2026-04-02 21:27:37,444 - report_generator - INFO - Saved HTML report to reports/2026-04-01_report.html
+2026-04-02 21:27:37,445 - report_generator - INFO - Saved text report to reports/2026-04-01_report.txt
+2026-04-02 21:27:37,445 - __main__ - INFO - Saved positions to file
+2026-04-02 21:27:37,446 - __main__ - INFO - === Daily analysis complete ===
+2026-04-02 21:27:42,574 - __main__ - INFO - Running analysis for date: 2026-04-01, optimize: False
+2026-04-02 21:27:42,574 - __main__ - INFO - === Starting daily analysis for 2026-04-01 ===
+2026-04-02 21:27:42,823 - indicators - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:27:43,165 - wave_theory - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:27:43,168 - volume_price - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:27:43,168 - chip_analysis - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:27:45,022 - sentiment_analyzer - INFO - Loaded keywords from config: bull=['降息', '版号', '大基金', '鼓励', '利好'], bear=['反垄断', '罚款', '禁售', '退市', '调查']
+2026-04-02 21:27:45,027 - signal_generator - INFO - Loaded config: {'total_score_threshold': 70, 'stop_loss': -0.06, 'take_profit_half': 0.06, 'take_profit_full': 0.1, 'holding_days_min': 30, 'holding_days_max': 90}
+2026-04-02 21:27:45,027 - __main__ - INFO - Analyzing ETF: 512000 (券商ETF)
+2026-04-02 21:27:45,031 - data_fetcher - INFO - Using cached data for 512000 up to 2026-04-02
+2026-04-02 21:27:45,042 - quality_checker - INFO - Data quality check complete. Status: ok, Issues: 0
+2026-04-02 21:27:45,042 - __main__ - WARNING - Insufficient data for 512000, skipping
+2026-04-02 21:27:45,042 - __main__ - INFO - Analyzing ETF: 588000 (科创50ETF)
+2026-04-02 21:27:45,043 - data_fetcher - INFO - Full fetch for 588000 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:46,262 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 588000: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:46,262 - data_fetcher - WARNING - No data fetched for 588000, returning empty DataFrame
+2026-04-02 21:27:46,264 - __main__ - WARNING - No data for 588000, skipping
+2026-04-02 21:27:46,265 - __main__ - INFO - Analyzing ETF: 161725 (白酒LOF)
+2026-04-02 21:27:46,266 - data_fetcher - INFO - Full fetch for 161725 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:46,413 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 161725: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:46,413 - data_fetcher - WARNING - No data fetched for 161725, returning empty DataFrame
+2026-04-02 21:27:46,416 - __main__ - WARNING - No data for 161725, skipping
+2026-04-02 21:27:46,416 - __main__ - INFO - Analyzing ETF: 562500 (机器人ETF)
+2026-04-02 21:27:46,417 - data_fetcher - INFO - Full fetch for 562500 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:46,570 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 562500: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:46,570 - data_fetcher - WARNING - No data fetched for 562500, returning empty DataFrame
+2026-04-02 21:27:46,573 - __main__ - WARNING - No data for 562500, skipping
+2026-04-02 21:27:46,573 - __main__ - INFO - Analyzing ETF: 159792 (港股通互联网ETF)
+2026-04-02 21:27:46,574 - data_fetcher - INFO - Full fetch for 159792 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:46,729 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 159792: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:46,730 - data_fetcher - WARNING - No data fetched for 159792, returning empty DataFrame
+2026-04-02 21:27:46,733 - __main__ - WARNING - No data for 159792, skipping
+2026-04-02 21:27:46,733 - __main__ - INFO - Analyzing ETF: 159620 (中证500ETF)
+2026-04-02 21:27:46,734 - data_fetcher - INFO - Full fetch for 159620 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:48,132 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 159620: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:48,133 - data_fetcher - WARNING - No data fetched for 159620, returning empty DataFrame
+2026-04-02 21:27:48,135 - __main__ - WARNING - No data for 159620, skipping
+2026-04-02 21:27:48,135 - __main__ - INFO - Analyzing ETF: 516690 (游戏ETF)
+2026-04-02 21:27:48,136 - data_fetcher - INFO - Full fetch for 516690 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:48,287 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 516690: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:48,288 - data_fetcher - WARNING - No data fetched for 516690, returning empty DataFrame
+2026-04-02 21:27:48,290 - __main__ - WARNING - No data for 516690, skipping
+2026-04-02 21:27:48,290 - __main__ - INFO - Analyzing ETF: 159582 (半导体ETF)
+2026-04-02 21:27:48,291 - data_fetcher - INFO - Full fetch for 159582 from 2024-04-02 to 2026-04-01
+2026-04-02 21:27:48,745 - data_fetcher - ERROR - Failed to fetch daily data from akshare for 159582: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-02 21:27:48,746 - data_fetcher - WARNING - No data fetched for 159582, returning empty DataFrame
+2026-04-02 21:27:48,761 - __main__ - WARNING - No data for 159582, skipping
+2026-04-02 21:27:48,778 - report_generator - INFO - Loaded 8 ETF mappings
+2026-04-02 21:27:48,778 - report_generator - WARNING - No signals provided, generating empty report
+2026-04-02 21:27:48,778 - report_generator - INFO - Saved HTML report to reports/2026-04-01_report.html
+2026-04-02 21:27:48,779 - report_generator - INFO - Saved text report to reports/2026-04-01_report.txt
+2026-04-02 21:27:48,779 - __main__ - INFO - Saved positions to file
+2026-04-02 21:27:48,779 - __main__ - INFO - === Daily analysis complete ===

@@ -1,0 +1,20 @@
+2026-04-02 21:21:38,517 - indicators - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:21:38,852 - wave_theory - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:21:38,854 - volume_price - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:21:38,854 - chip_analysis - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:21:38,861 - signal_generator - INFO - Loaded config: {'total_score_threshold': 70, 'stop_loss': -0.06, 'take_profit_half': 0.06, 'take_profit_full': 0.1, 'holding_days_min': 30, 'holding_days_max': 90}
+2026-04-02 21:21:38,861 - __main__ - INFO - Starting backtest for 512000 from 2025-10-04 to 2026-04-02
+2026-04-02 21:21:38,866 - data_fetcher - INFO - Using cached data for 512000 up to 2026-04-02
+2026-04-02 21:21:38,878 - quality_checker - INFO - Data quality check complete. Status: ok, Issues: 0
+2026-04-02 21:21:38,878 - __main__ - INFO - Data loaded: 23 rows, quality status: ok
+2026-04-02 21:21:38,878 - __main__ - INFO - Backtest complete: win_rate=0.00%, total_trades=0, total_return=0.00%
+2026-04-02 21:21:52,808 - indicators - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:21:53,148 - wave_theory - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:21:53,149 - volume_price - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:21:53,149 - chip_analysis - INFO - Loaded params from config/dynamic_params.json
+2026-04-02 21:21:53,155 - signal_generator - INFO - Loaded config: {'total_score_threshold': 70, 'stop_loss': -0.06, 'take_profit_half': 0.06, 'take_profit_full': 0.1, 'holding_days_min': 30, 'holding_days_max': 90}
+2026-04-02 21:21:53,155 - __main__ - INFO - Starting backtest for 512000 from 2025-10-04 to 2026-04-02
+2026-04-02 21:21:53,159 - data_fetcher - INFO - Using cached data for 512000 up to 2026-04-02
+2026-04-02 21:21:53,171 - quality_checker - INFO - Data quality check complete. Status: ok, Issues: 0
+2026-04-02 21:21:53,171 - __main__ - INFO - Data loaded: 23 rows, quality status: ok
+2026-04-02 21:21:53,172 - __main__ - INFO - Backtest complete: win_rate=0.00%, total_trades=0, total_return=0.00%

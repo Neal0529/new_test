@@ -1,0 +1,3 @@
+2026-04-02 21:13:48,657 - __main__ - INFO - Volume-price analysis: score=5, details={'vol_healthy': np.True_, 'candle_bull': False, 'volume_shrink': False, 'ma_short': np.float64(1022902.2634788372), 'ma_long': np.float64(964057.735638096), 'last_3_days_candles': 1, 'shrink_day_index': -1, 'short_period': 5, 'long_period': 20}
+2026-04-02 21:14:11,186 - __main__ - INFO - Volume shrinkage detected at day 20, vol=100000.0, min_prev=852147.8009632572
+2026-04-02 21:14:11,187 - __main__ - INFO - Volume-price analysis: score=10, details={'vol_healthy': np.True_, 'candle_bull': False, 'volume_shrink': True, 'ma_short': np.float64(1022902.2634788372), 'ma_long': np.float64(964057.735638096), 'last_3_days_candles': 1, 'shrink_day_index': 20, 'short_period': 5, 'long_period': 20}

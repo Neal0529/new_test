@@ -1,0 +1,8 @@
+2026-04-02 21:15:06,709 - __main__ - INFO - Chip analysis: profit_ratio=0.350, concentration=12.00, thresholds=[profit=0.4, conc=15.0], conditions=[A=True, B=True], result=True, score=10
+2026-04-02 21:15:06,709 - __main__ - INFO - Chip analysis: profit_ratio=0.500, concentration=12.00, thresholds=[profit=0.4, conc=15.0], conditions=[A=False, B=True], result=False, score=0
+2026-04-02 21:15:06,709 - __main__ - INFO - Chip analysis: profit_ratio=0.350, concentration=20.00, thresholds=[profit=0.4, conc=15.0], conditions=[A=True, B=False], result=False, score=0
+2026-04-02 21:15:06,709 - __main__ - INFO - Chip analysis: profit_ratio=0.500, concentration=20.00, thresholds=[profit=0.4, conc=15.0], conditions=[A=False, B=False], result=False, score=0
+2026-04-02 21:15:06,709 - __main__ - WARNING - Missing chip data: profit_ratio=None, concentration=12.0
+2026-04-02 21:15:06,709 - __main__ - WARNING - Missing chip data: profit_ratio=0.35, concentration=None
+2026-04-02 21:15:06,709 - __main__ - INFO - Chip analysis: profit_ratio=0.350, concentration=12.00, thresholds=[profit=0.3, conc=10.0], conditions=[A=False, B=False], result=False, score=0
+2026-04-02 21:15:06,709 - __main__ - INFO - Chip analysis: profit_ratio=0.250, concentration=8.00, thresholds=[profit=0.4, conc=15.0], conditions=[A=True, B=True], result=True, score=10
